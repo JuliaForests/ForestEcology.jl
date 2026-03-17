@@ -1,3 +1,4 @@
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+ForestCore = "c3d06f35-1cec-4a06-8b44-87c7409765a8"
 ForestEcology = "e0aa2b76-f986-480d-ac77-67b568cf2afc"

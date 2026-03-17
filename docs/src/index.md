@@ -10,5 +10,5 @@ Documentation for [ForestEcology](https://github.com/JuliaForests/ForestEcology.
 ```
 
 ```@autodocs
-Modules = [ForestEcology]
+Modules = [ForestEcology, ForestCore]
 ```
