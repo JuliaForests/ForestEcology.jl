@@ -1,18 +1,18 @@
 module ForestEcology
 
-using DataFrames, ForestCore, Reexport
+using DataFrames, Distributions, ForestCore, Random, Reexport
 
 @reexport using ForestCore
 
-# Load the theoretical modules
 include("structure.jl")
 include("biodiversity.jl")
-# include("beta_diversity.jl")
-# include("rarefaction.jl")
+include("accumulation.jl")
 
-export phytosociology
-export communitymatrix, diversity
-export floristicdistance, floristicsimilarity
-# export speciesaccumulation
+export phytosociology,
+  communitymatrix,
+  diversity,
+  floristicdistance,
+  floristicsimilarity,
+  speciesaccumulation
 
 end

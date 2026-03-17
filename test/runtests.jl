@@ -1,5 +1,7 @@
 using ForestEcology
 using Test
+using Random
+Random.seed!(42)
 
 @testset "ForestEcology.jl" begin
   species = ["A", "B", "A", "C", "B", "A"]
@@ -44,18 +46,15 @@ using Test
       @test isapprox(divVector.jevenness[1], 0.92062, atol=1e-4)
       @test isapprox(divVector.berger[1], 0.5, atol=1e-4)
       @test isapprox(divVector.chao1[1], 3.5, atol=1e-4)
-
       divSpecies = diversity(species)
       @test divSpecies.richness[1] == 3
       @test divSpecies.abundance[1] == 6
-
       mat = communitymatrix(plots, species)
       divMat = diversity(mat)
       @test size(divMat) == (4, 9)
       @test divMat.plots[end] == "pooled"
       @test divMat.richness[1] == 2
       @test divMat.richness[2] == 2
-
       divWrap = diversity(plots, species)
       @test size(divWrap) == (4, 9)
     end
@@ -95,4 +94,32 @@ using Test
       end
     end
   end
+
+  @testset "Species Accumulation (Rarefaction)" begin
+    mat = communitymatrix(plots, species)
+
+    @testset "Plot-based Accumulation" begin
+    accPlots = speciesaccumulation(mat, iterations=50)
+    @test size(accPlots) == (3, 5)
+    @test accPlots.plots == [1, 2, 3]
+    @test accPlots.richness[end] == 3.0
+    @test issorted(accPlots.richness)
+    end
+
+    @testset "Individual-based Accumulation" begin
+      counts = [3, 2, 1]
+      accInd = speciesaccumulation(counts, iterations=50)
+      @test size(accInd) == (6, 5)
+      @test accInd.individuals == [1, 2, 3, 4, 5, 6]
+      @test accInd.richness[end] == 3.0
+      @test issorted(accInd.richness)
+    end
+    @testset "Wrappers" begin
+      accWrapPlots = speciesaccumulation(plots, species, iterations=10)
+      @test size(accWrapPlots) == (3, 5)
+      accWrapInd = speciesaccumulation(species, iterations=10)
+      @test size(accWrapInd) == (6, 5)
+    end
+  end
+
 end
