@@ -6,13 +6,13 @@ using DataFrames, ForestCore, Reexport
 
 # Load the theoretical modules
 include("structure.jl")
-# include("alpha_diversity.jl")
+include("biodiversity.jl")
 # include("beta_diversity.jl")
 # include("rarefaction.jl")
 
 export phytosociology
-# export communitymatrix, diversity
-# export floristicdistance, floristicsimilarity
+export communitymatrix, diversity
+export floristicdistance, floristicsimilarity
 # export speciesaccumulation
 
 end
