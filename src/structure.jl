@@ -49,7 +49,7 @@ function phytosociology(species::AbstractVector, plots::AbstractVector, d::Abstr
     )
   end
   # Expansion Factor
-  EF = unit(ft.g[1]) == u"m^2" ? EF = uconvert(u"ha", area) .^ -1 : uconvert(u"ac", area) .^ -1
+  EF = expansionfactor(d, area)
   # ADe: Absolute Density (trees/area)
   ft.ADe = ft.n .* EF .|> float
   # ADo: Absolute Dominance (basal area/area)
