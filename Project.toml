@@ -1,6 +1,6 @@
 name = "ForestEcology"
 uuid = "e0aa2b76-f986-480d-ac77-67b568cf2afc"
-version = "1.0.0-DEV"
+version = "1.0.0"
 authors = ["marcosdanieldasilva <marcosdasilva@5a.tec.br> and contributors"]
 
 [deps]
