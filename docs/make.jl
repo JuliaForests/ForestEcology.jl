@@ -4,7 +4,7 @@ using Documenter
 DocMeta.setdocmeta!(ForestEcology, :DocTestSetup, :(using ForestEcology); recursive=true)
 
 makedocs(;
-    modules=[ForestEcology, ForestCore],
+    modules=[ForestEcology, ForestFoundations],
     remotes=nothing,
     authors="Marcos Daniel da Silva <marcosdasilva@5a.tec.br> and contributors",
     sitename="ForestEcology.jl",

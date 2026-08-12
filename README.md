@@ -4,9 +4,9 @@ ForestEcology.jl provides community ecology and phytosociology tools for analyzi
 native/mixed forest inventories in Julia. Its focus is on describing the **horizontal
 structure** of a forest community (species importance values), its **biodiversity**
 (diversity, similarity, and species accumulation), building on
-[ForestCore.jl](https://github.com/JuliaForests/ForestCore.jl) for units and basal
-area. These methods support ecological monitoring, conservation assessment, and forest
-inventory research.
+[ForestFoundations.jl](https://github.com/JuliaForests/ForestFoundations.jl) for units
+and basal area. These methods support ecological monitoring, conservation assessment,
+and forest inventory research.
 
 [![Build Status](https://github.com/JuliaForests/ForestEcology.jl/actions/workflows/CI.yml/badge.svg?branch=master)](https://github.com/JuliaForests/ForestEcology.jl/actions/workflows/CI.yml?query=branch%3Amaster)
 

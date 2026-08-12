@@ -1,8 +1,8 @@
 module ForestEcology
 
-using DataFrames, Distributions, ForestCore, Random, Reexport
+using DataFrames, Distributions, ForestFoundations, Random, Reexport
 
-@reexport using ForestCore
+@reexport using ForestFoundations
 
 include("structure.jl")
 include("biodiversity.jl")
